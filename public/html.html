@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Пример</title>
+  <style>
+    #div1 {
+      height: 150px;
+      width: 150px;
+      margin: 20px;
+      padding: 10px;
+      border: 1px solid black;
+      perspective: 150px;
+    }
+    #div2 {
+      padding: 50px;
+      border: 1px solid black;
+      background-color: red;
+      transition: 2s;
+      backface-visibility: hidden;
+      position: absolute;
+    }
+    #div3{
+      padding: 50px;
+      border: 1px solid black;
+      background-color: red;
+      transition: 2s;
+      backface-visibility: hidden;
+      transform :rotateY(180deg);
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div id="div1">
+    <div id="div2">FRONT</div>
+    <div id="div3">BACK</div>
+  </div>
+ <script >
+     const card = document.getElementById("div1");
+     const card1 = document.getElementById("div2");
+     const card2 = document.getElementById("div3");
+     let deg = 0;
+     let deg1 = 180; 
+     card.addEventListener("click",function(){
+         deg += 180;
+         deg1 += 180;
+         card1.style.transform = `rotateY(${deg}deg)`;
+         card2.style.transform = `rotateY(${deg1}deg)`;
+     });
+ </script>
+
+</body>
+</html>
